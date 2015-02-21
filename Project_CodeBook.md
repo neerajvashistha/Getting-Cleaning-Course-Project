@@ -1,50 +1,82 @@
-Course Project Code Book
-Source of the original data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+#Code Book#
 
-Original description: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+Source of the original data: [Link][1] 
 
-The varaibles are
+Original description:[Link][2]
+
+##Variables##
+
 actData
-    activity Data read from "./dataset/activity_labels.txt" 
-    Dimensions: 6x2
-attrlab 
-    Features Data read from "./dataset/features.txt"
-    Dimensions: 561x2
-cleanedData
-    Cleaned Mearged Data Written to "merged_clean_data.txt"
-    Dimensions: 10299x68
-joinData
-    Raw Data obtained from Joining train And test Dataset
-    Dimensions: 10299x66
-joinLab
-    Join Data Lable names
-    Dimensions: 10299x1
-joinSub
-    Join Data Subject names
-    Dimensions: 10299x1
-resultData
-    The Resulted Dataset with the average of each variable for each activity and each subject. 
-    Dimensions: 180x68
-testData
-    Test Dataset obtained from "./dataset/test/X_test.txt"
-    Dimensions: 2947x561
-testLab
-    Test Dataset Lables obtained from "./dataset/test/y_test.txt"
-    Dimensions: 2947x1
-testSub
-    Test Dataset Subject obtained from "./dataset/test/subject_test.txt"
-    Dimensions: 2947x1
-trainData
-    Train Dataset obtained from "./dataset/train/X_train.txt"
-    Dimensions: 2947x561
-trainLab
-    Train Dataset Lables obtained from "./dataset/train/y_train.txt"
-    Dimensions: 2947x1
-trainSub
-    Train Dataset Subject obtained from "./dataset/train/subject_train.txt"
-    Dimensions: 2947x1
-    
 
+> activity Data read from "./dataset/activity_labels.txt" 
+
+> Dimensions: 6x2
+
+attrlab 
+
+> Features Data read from "./dataset/features.txt"
+
+> Dimensions: 561x2
+
+cleanedData
+>    Cleaned Mearged Data Written to "merged_clean_data.txt"
+
+ >   Dimensions: 10299x68
+
+joinData
+>    Raw Data obtained from Joining train And test Dataset
+
+ >   Dimensions: 10299x66
+
+joinLab
+>    Join Data Lable names
+
+>    Dimensions: 10299x1
+joinSub
+>    Join Data Subject names
+
+>    Dimensions: 10299x1
+
+resultData
+>    The Resulted Dataset with the average of each variable for each activity and each subject. 
+
+>    Dimensions: 180x68
+
+testData
+>    Test Dataset obtained from "./dataset/test/X_test.txt"
+
+>    Dimensions: 2947x561
+
+testLab
+>    Test Dataset Lables obtained from "./dataset/test/y_test.txt"
+
+>    Dimensions: 2947x1
+
+testSub
+>    Test Dataset Subject obtained from "./dataset/test/subject_test.txt"
+
+>    Dimensions: 2947x1
+
+trainData
+ >  Train Dataset obtained from "./dataset/train/X_train.txt"
+
+  >  Dimensions: 2947x561
+
+trainLab
+>    Train Dataset Lables obtained from "./dataset/train/y_train.txt"
+
+ >   Dimensions: 2947x1
+
+trainSub
+>    Train Dataset Subject obtained from "./dataset/train/subject_train.txt"
+
+>   Dimensions: 2947x1
+
+##Explanation##
+
+The attached R script (run_analysis.R) performs the following to clean up the data:
+
+Merges the training and test sets to create one data set, namely 'train/X_train.txt' with 'test/X_test.txt', the result of which is a 10299x561 data frame, as in the original description ("Number of Instances: 10299" and "Number of Attributes: 561"), 'train/subject_train.txt' with 'test/subject_test.txt', the result of which is a 10299x1 data frame with subject IDs, and 'train/y_train.txt' with 'test/y_test.txt', the result of which is also a 10299x1 data frame with activity IDs.    
 
 The attached R script (run_analysis.R) performs the following to clean up the data:
 
@@ -83,3 +115,6 @@ The script also appropriately labels the data set with descriptive names: all fe
 
   tgravityacc-mean-y
 Finally, the script creates a 2nd, independent tidy data set with the average of each measurement for each activity and each subject. The result is saved as data_set_with_the_averages.txt, a 180x68 data frame, where as before, the first column contains subject IDs, the second column contains activity names (see below), and then the averages for each of the 66 attributes are in columns 3...68. There are 30 subjects and 6 activities, thus 180 rows in this data set with averages.
+
+[1]: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+[2]: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
