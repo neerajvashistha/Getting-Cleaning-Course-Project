@@ -10,9 +10,8 @@ Now, run the file "run_analysis.R" by source("run_analysis.R")
 
 THis commands results in creation of two files 
 	
-	merged_clean_data.txt (8.3 Mb): contains data frame called cleanedData with 10299*68 dimension.
-	
-	dataset_with_computed_averages.txt (224.9 Kb): contains data frame called resultData with 180*68 dimension.
+	*merged_clean_data.txt (8.3 Mb): contains data frame called cleanedData with 10299*68 dimension.
+	*dataset_with_computed_averages.txt (224.9 Kb): contains data frame called resultData with 180*68 dimension.
 
 By using command dt <- read.table("data_with_means.txt") read the file. 
 
